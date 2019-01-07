@@ -1247,6 +1247,12 @@ bool AppInit2(boost::thread_group& threadGroup)
 #else // ENABLE_WALLET
     LogPrintf("No wallet compiled in!\n");
 #endif // !ENABLE_WALLET
+
+    // ********************************************************* Step 8.5: set block broadcasting
+    bool doNotBroadcastBlocks = false;
+    if (GetBoolArg("-dontbroadcastblocks", false))
+	doNotBroadcastBlocks = true;
+
     // ********************************************************* Step 9: import blocks
 
     if (mapArgs.count("-blocknotify"))
@@ -1288,6 +1294,8 @@ bool AppInit2(boost::thread_group& threadGroup)
     LogPrintf("mapWallet.size() = %u\n",       pwalletMain ? pwalletMain->mapWallet.size() : 0);
     LogPrintf("mapAddressBook.size() = %u\n",  pwalletMain ? pwalletMain->mapAddressBook.size() : 0);
 #endif
+    if (doNotBroadcastBlocks)
+	LogPrintf("\n---------Blocks won't be broadcasted.------------\n\n");
 
     StartNode(threadGroup);
 
