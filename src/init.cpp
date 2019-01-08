@@ -1249,9 +1249,9 @@ bool AppInit2(boost::thread_group& threadGroup)
 #endif // !ENABLE_WALLET
 
     // ********************************************************* Step 8.5: set block broadcasting
-    bool doNotBroadcastBlocks = false;
+	doNotBroadcastBlocks = false;
     if (GetBoolArg("-dontbroadcastblocks", false))
-	doNotBroadcastBlocks = true;
+		doNotBroadcastBlocks = true;
 
     // ********************************************************* Step 9: import blocks
 
