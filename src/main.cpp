@@ -54,6 +54,7 @@ bool fIsBareMultisigStd = true;
 bool fCheckBlockIndex = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
+bool doNotBroadcastBlocks = false;
 
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying and mining) */
