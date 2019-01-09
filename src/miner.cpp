@@ -419,20 +419,8 @@ void static BitcoinMiner(CWallet *pwallet)
 
     try {
         while (true) {
-            if (Params().MiningRequiresPeers()) {
-                // Busy-wait for the network to come online so we don't waste time mining
-                // on an obsolete chain. In regtest mode we expect to fly solo.
-                do {
-                    bool fvNodesEmpty;
-                    {
-                        LOCK(cs_vNodes);
-                        fvNodesEmpty = vNodes.empty();
-                    }
-                    if (!fvNodesEmpty && !IsInitialBlockDownload())
-                        break;
-                    MilliSleep(1000);
-                } while (true);
-            }
+            // 51 darosior
+            // Disabled the wait for peers before mining because we want to mine on an older chain.
 
             //
             // Create new block
