@@ -1,3 +1,6 @@
+*Below is the original README of Insacoin. You can checkout commits to see what have been modified to perform the attack, or ckeckout the description in [the corresponding Medium post](https://medium.com/@darosior/how-to-perform-a-51-attack-f8f739925110).*  
+  
+  
 Insacoin
 ================================
 
